@@ -88,7 +88,7 @@ $> python3 align.py \
         -align_dir ../data/AM718/segment.align/
         -out_dir ../data/AM718/out
         -conf_path ../conf/AM718.align.conf
-        -xp_id 0
+        -id_xp 0
 ```
 
 align.py dumps:
