@@ -92,9 +92,9 @@ $> python3 align.py \
 ```
 
 align.py dumps:
- - ${align_dir}/segment.align.${xp_id}.png: segmented electron data that best fit the current EBSD speckle
- - ${out_dir}/overlap.align.${xp_id}.png: the overlap between the re-align segmented electron image and the EBSD image before correction
- - ${out_dir}/affine.${xp_id}.json: the parameters of the linear transformation (json file)
+ - ${align_dir}/segment.align.${id_xp}.png: segmented electron data that best fit the current EBSD speckle
+ - ${out_dir}/overlap.align.${id_xp}.png: the overlap between the re-align segmented electron image and the EBSD image before correction
+ - ${out_dir}/affine.${id_xp}.json: the parameters of the linear transformation (json file)
 
 ### Distord
 The next step is to find the undistord that will macth the EBSD speckles to the segmented electron data0.
@@ -102,10 +102,10 @@ To do so, we use the CMA-ES algorithm that will compute intermediate distorted m
 For more details, please have a look to our paper.
 
 distord.py dumps:
- - ${out_dir}/ebsd_distord.${xp_id}.png: the EBSD after the polynomial distorsion
- - ${out_dir}/mesh_distord.${xp_id}.png: the EBSD and the mesh used to compute the polynomial distortion  
- - ${out_dir}/overlap.distord.${xp_id}.png: the overlap between the re-align segmented electron image and the EBSD image after correction
- - ${out_dir}/params.${xp_id}.png: the parameters of the polynomial transformation and the mesh (json file)
+ - ${out_dir}/ebsd_distord.${id_xp}.png: the EBSD after the polynomial distorsion
+ - ${out_dir}/mesh_distord.${id_xp}.png: the EBSD and the mesh used to compute the polynomial distortion  
+ - ${out_dir}/overlap.distord.${id_xp}.png: the overlap between the re-align segmented electron image and the EBSD image after correction
+ - ${out_dir}/params.${id_xp}.png: the parameters of the polynomial transformation and the mesh (json file)
 
      
 If you want to run distord.py on our sample, use the following instruction:
@@ -117,7 +117,7 @@ $> python3 distord.py \
         -ang_ref_path ../data/AM718/ang/AM718.ang
         -out_dir ../data/AM718/out
         -conf_path ../conf/AM718.align.conf
-        -xp_id 0
+        -id_xp 0
 ```
 Note: Do not forget to unzip the file data/AM718/ang/AM718.zip !
 
